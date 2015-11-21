@@ -1,7 +1,7 @@
 # Restaurant
-An extension to the Snackbar view avaiable at the Android Design Support Library.
+An extension to the Snackbar view available at the Android Design Support Library.
 
-Restaurant wraps the `Snackbar` implementation to easily allow more customization. With Restaurant you can change the text and background color of the `Snackbar` just calling a method. Restaurant can also detect the correct view to atach the Snackbar just receiving the activity. 
+Restaurant wraps the `Snackbar` implementation to easily allow more customization. With Restaurant you can change the text and background color of the `Snackbar` just calling a method. Restaurant can also detect the correct view to attach the Snackbar just receiving the activity. 
 
 # Gradle Dependency
 
