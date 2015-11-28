@@ -6,17 +6,41 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.design.widget.Snackbar;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * The Restaurant is an extension to the Snackbar view available at the Android Design Support Library.
+ *
+ * Restaurant wraps the Snackbar implementation to easily allow more customization. With Restaurant
+ * you can change the text and background color of the Snackbar just calling a method. Restaurant
+ * can also detect the correct view to attach the Snackbar just receiving the activity.
+ */
 public class Restaurant {
 
-    private Snackbar snackbar;
+    private final Snackbar snackbar;
 
+    /**
+     * Constructor.
+     *
+     * @param activity The activity.
+     * @param resId The resource id of the string resource to use. Can be formatted text.
+     * @param duration How long to display the message.
+     */
     public Restaurant(Activity activity, @StringRes int resId, @Snackbar.Duration int duration) {
         this.snackbar = Snackbar.make(activity.getWindow().getDecorView().findViewById(android.R.id.content), resId, duration);
     }
 
+    /**
+     * Constructor.
+     *
+     * @param activity The activity.
+     * @param text The string to use. Can be formatted text.
+     * @param duration How long to display the message.
+     */
     public Restaurant(Activity activity, @NonNull CharSequence text, @Snackbar.Duration int duration) {
         this.snackbar = Snackbar.make(activity.getWindow().getDecorView().findViewById(android.R.id.content), text, duration);
     }
@@ -28,6 +52,18 @@ public class Restaurant {
      */
     public Snackbar getSnackBar() {
         return snackbar;
+    }
+
+    public Restaurant appendText(String text, @ColorInt int color) {
+        Spannable spannable = new SpannableString(text);
+        View view = this.getSnackBar().getView();
+        TextView textView = (TextView) view.findViewById(R.id.snackbar_text);
+
+        spannable.setSpan(new ForegroundColorSpan(color), 0, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        textView.append(spannable);
+
+        return this;
     }
 
     /**
@@ -123,9 +159,9 @@ public class Restaurant {
     @NonNull
     public Restaurant setTextColor(ColorStateList colors) {
         View view = this.getSnackBar().getView();
-        TextView tv = (TextView) view.findViewById(R.id.snackbar_text);
+        TextView textView = (TextView) view.findViewById(R.id.snackbar_text);
 
-        tv.setTextColor(colors);
+        textView.setTextColor(colors);
 
         return this;
     }

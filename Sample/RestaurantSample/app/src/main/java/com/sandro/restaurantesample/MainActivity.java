@@ -46,5 +46,18 @@ public class MainActivity extends AppCompatActivity {
                     .show();
             }
         });
+
+        Button snackbarMultipleCustomTextColor = (Button) findViewById(R.id.button_snackbar_multiple_custom_text_color);
+        snackbarMultipleCustomTextColor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Restaurant(MainActivity.this, "", Snackbar.LENGTH_LONG)
+                    .appendText("RED", Color.RED)
+                    .appendText("GREEN", Color.GREEN)
+                    .appendText("BLUE", Color.BLUE)
+                    .appendText("WHITE", Color.WHITE)
+                    .show();
+            }
+        });
     }
 }
