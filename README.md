@@ -1,7 +1,7 @@
 # Restaurant
 An extension to the Snackbar view available at the Android Design Support Library.
 
-Restaurant wraps the `Snackbar` implementation to easily allow more customization. With Restaurant you can change the text and background color of the `Snackbar` just calling a method. Restaurant can also detect the correct view to attach the Snackbar just receiving the activity. 
+Restaurant wraps the `Snackbar` implementation to easily allow more customization. With Restaurant you can change the text and background color of the `Snackbar` just calling a method. Restaurant can also detect the correct view to attach the Snackbar just receiving the activity.
 
 # Gradle Dependency
 
@@ -24,7 +24,7 @@ dependencies {
 
     // ... other dependencies here.
     // Set the transitive = false if you already have the Design Support Library dependency.
-    compile('com.github.SandroMachado.restaurant:0.1.0@aar') {
+    compile('com.github.SandroMachado.restaurant:0.2.0@aar') {
         transitive = true
     }
 }
@@ -49,6 +49,19 @@ Show a Snackbar with a custom text color:
 ```Java
 new Restaurant(MainActivity.this, "Snackbar with custom text color", Snackbar.LENGTH_LONG)
     .setTextColor(Color.GREEN)
+    .show();
+```
+
+Show a Snackbar with a custom text colors:
+
+![Snackbar with custom text colors](screenshots/custom_text_colors.png)
+
+```Java
+new Restaurant(MainActivity.this, "", Snackbar.LENGTH_LONG)
+    .appendText("RED", Color.RED)
+    .appendText("GREEN", Color.GREEN)
+    .appendText("BLUE", Color.BLUE)
+    .appendText("WHITE", Color.WHITE)
     .show();
 ```
 
