@@ -29,5 +29,10 @@
         android:layout_height="wrap_content"
         android:text="Show a Snackbar with custom text color and background"/>
 
+    <Button
+        android:id="@+id/button_snackbar_multiple_custom_text_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show a Snackbar with multiple custom text color"/>
 
 </LinearLayout>
