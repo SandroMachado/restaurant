@@ -1,14 +1,12 @@
-# Restaurant
+# Restaurant [![Release](https://img.shields.io/github/release/SandroMachado/Restaurant.svg?label=jitpack)](https://jitpack.io/#SandroMachado/Restaurant) <a href="http://www.methodscount.com/?lib=com.github.SandroMachado%3Arestaurant%3A0.2.0"><img src="https://img.shields.io/badge/Methods count-core: 50 | deps: 18621-e91e63.svg"></img></a>
+
 An extension to the Snackbar view available at the Android Design Support Library.
 
 Restaurant wraps the `Snackbar` implementation to easily allow more customization. With Restaurant you can change the text and background color of the `Snackbar` just calling a method. Restaurant can also detect the correct view to attach the Snackbar just receiving the activity.
 
 # Gradle Dependency
 
-[![Release](https://img.shields.io/github/release/SandroMachado/Restaurant.svg?label=jitpack)](https://jitpack.io/#SandroMachado/Restaurant)
-
 ### Repository
-
 First, add the following to your app's `build.gradle` file:
 
 ```Gradle
