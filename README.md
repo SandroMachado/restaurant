@@ -24,7 +24,7 @@ dependencies {
 
     // ... other dependencies here.
     // Set the transitive = false if you already have the Design Support Library dependency.
-    compile('com.github.SandroMachado.restaurant:0.2.0@aar') {
+    compile('com.github.SandroMachado:restaurant:0.2.0@aar') {
         transitive = true
     }
 }
